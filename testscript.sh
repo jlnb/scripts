@@ -1,5 +1,20 @@
 #!/bin/bash
 
-./renameFiles.sh inputfolder outputfolder 0
-./renameFiles.sh inputfolder outputfolder C
-./renameFiles.sh inputfolder inputfolder M
+echo "First, test copy-functionality"
+./renameFiles.sh inputfolder 0
+./renameFiles.sh inputfolder C
+
+echo "Files and folders after copy-function:"
+tree
+
+./resetTestEnvironment.sh
+
+echo "Second, test move-functionality"
+./renameFiles.sh inputfolder 0
+./renameFiles.sh inputfolder M
+
+echo "Files and folders after move-function:"
+tree
+
+
+
