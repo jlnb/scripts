@@ -24,7 +24,6 @@ if ! [ -d "$TARGETFOLDER" ]; then
 fi
 
 TARGETFOLDER=$(realpath "$TARGETFOLDER")
-echo "$TARGETFOLDER"
 
 # Check if a not allowed character is used in the TARGETFOLDER
 pattern='.*[\*\\@:\|<>?"].*'
@@ -38,13 +37,13 @@ if ! [[ $TARGETFOLDER =~ $pattern ]]; then
     
 	if [[ ! -e "$TARGETFOLDER/$FILENAME" ]]; then
 	    if [ "$MODE" = "C" ]; then
-		#echo "cp "\'$file\'" "\'$TARGETFOLDER/$FILENAME\'""
-		cp "$file" "$TARGETFOLDER/$FILENAME"
+		#echo "cp -p "\'$file\'" "\'$TARGETFOLDER/$FILENAME\'""
+		cp -p "$file" "$TARGETFOLDER/$FILENAME"
 	    elif [ "$MODE" = "M" ]; then
 		#echo "mv "\"$file\"" "\"$TARGETFOLDER/$FILENAME\"""
 		mv "$file" "$TARGETFOLDER/$FILENAME"
 	    else
-		echo "[mv|cp] "\'$file\'" "\'$TARGETFOLDER/$FILENAME\'""
+		echo "[mv|cp -p] "\'$file\'" "\'$TARGETFOLDER/$FILENAME\'""
 	    fi
 	else
 	    echo "File $file not moved or copied to target folder."
