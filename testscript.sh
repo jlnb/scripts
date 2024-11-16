@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./renameFilesFind.sh inputfolder outputfolder 0
-./renameFilesFind.sh inputfolder outputfolder C
-./renameFilesFind.sh inputfolder inputfolder M
+./renameFiles.sh inputfolder outputfolder 0
+./renameFiles.sh inputfolder outputfolder C
+./renameFiles.sh inputfolder inputfolder M
