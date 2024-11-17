@@ -1,0 +1,9 @@
+- .stfolder/
+- .@__thumb/
+- @Recently-Snapshot/
+- @Recycle/
+- desktop.ini
+- ._.DS_Store
+- .DS_Store
+- slprj/
+- .stignore
